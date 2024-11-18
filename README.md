@@ -1,5 +1,5 @@
 # Web Engineering II
-**Übungsprojekt im Wintersemester 2021/2022 (5. Studienplansemester)**
+**Übungsprojekt im Wintersemester 2021/2022 (4. Studienplansemester)**
 
 _Berliner Hochschule für Technik_  
 _Dozent: Sebastian von Klinski_
@@ -16,7 +16,7 @@ HTTPS, Basic-Authentication, Access Tokens mit JWT (JSON-Web-Tokens), Passwort-H
 
 ### English
 # Web Engineering II
-**Exercise project of winter semester 2021/2022 (5th study plan semester)**
+**Exercise project of winter semester 2021/2022 (4th study plan semester)**
 
 _Berlin University of Applied Sciences and Technology_  
 _Lecturer: Sebastian von Klinski_
