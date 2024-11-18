@@ -2,7 +2,7 @@
 **Übungsprojekt im Wintersemester 2021/2022 (4. Studienplansemester)**
 
 _Berliner Hochschule für Technik_  
-_Dozent: Sebastian von Klinski_
+_Dozent: Prof. Dr. Sebastian von Klinski_
 
 Umsetzung von Backend und Frontend für eine Community-Webseite für Studierende unter Verwendung von JavaScript und dem MERN Softwarestack.
 
@@ -19,7 +19,7 @@ HTTPS, Basic-Authentication, Access Tokens mit JWT (JSON-Web-Tokens), Passwort-H
 **Exercise project of winter semester 2021/2022 (4th study plan semester)**
 
 _Berlin University of Applied Sciences and Technology_  
-_Lecturer: Sebastian von Klinski_
+_Lecturer: Prof. Dr. Sebastian von Klinski_
 
 Implementation of backend and frontend for a community website for students using JavaScript and the MERN solution stack.
 
