@@ -1,0 +1,85 @@
+// Login mit Basic Authentication mit korrekten Credentials admin:123
+###
+# @name loginAdminCorrect
+POST https://localhost:443/authenticate
+Authorization: Basic YWRtaW46MTIz
+
+@adminToken = {{loginAdminCorrect.response.headers.Authorization}}
+
+### Auflisten aller Nutzer mit Token(Admin)
+https://localhost:443/user
+Authorization: {{adminToken}}
+
+###
+POST https://localhost:443/user/getByUserID
+Content-Type: application/json
+
+{
+    "userID": "admin"
+}
+
+### Auflisten aller Messages ohne Token
+https://localhost:443/forumMessage
+
+
+// Lege ein erste Message an, der Administrator ist author 
+###
+POST https://localhost:443/forumMessage
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "forumID": "61ed0dd5c3a1f20319890336",
+    "messageTitle": "Meine Nachricht",
+    "messageText": "Das ist eine Nachricht, das ich im Rahmen der Tests angelegt habe"
+}
+
+### Auflisten aller Messages ohne Token, nun sollte es eine Message geben
+https://localhost:443/forumMessage
+
+###
+https://localhost:443/forum
+
+
+### Ändere den messageText in dem existierenden Forum
+PUT https://localhost:443/forumMessage
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "_id": "619e2bb8077b2c90e410f5e9",
+    "messageText": "Das ist der neue Text"
+}
+
+### Auflisten der Messages des Administrators
+https://localhost:443/forumMessage/getByAuthorID
+Authorization: {{adminToken}}
+
+### Auflisten der Messages für das Forum vom Admin, ?diese Funktion sollte nur der Admin nutzen?
+POST https://localhost:443/forumMessage/getByForumID
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "forumID" : "618bcab2cc316a34e0cdcb88"
+}
+
+### Löschen vom ersten Forum
+DELETE https://localhost:443/forumMessage/
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "_id": "619277dea80e7e36cb904414"
+}
+
+###
+PUT https://localhost:443/user/
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "userID": "albert",
+    "userName": "Manfred Munstermann",
+    "email": ""
+}

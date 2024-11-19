@@ -1,0 +1,82 @@
+// Rufe alle User ab. Zu Beginn sollten keine User in der Datenbank sein.
+###
+http://localhost:8080/publicUser/
+
+// Lege ersten User an, der Administrator ist
+###
+POST http://localhost:8080/publicUser/
+Content-Type: application/json
+
+{
+    "userID": "admin",
+    "userName": "Udo Müller",
+    "password": "123",
+    "email": "udo@mail.de",
+    "isAdministrator": true
+}
+
+// Rufe User mit UserID admin ab. Im Anschluss werden die Daten des Users ein- schließlich des gehashten Passworts geprüft.
+###
+POST http://localhost:8080/publicUser/getByUserID
+Content-Type: application/json
+
+{
+    "userID": "admin"
+}
+
+// Lege zweiten User an. Prüfe UserID und UserName, ob die Angaben korrekt sind. 
+###
+POST http://localhost:8080/publicUser
+Content-Type: application/json
+
+{
+    "userID": "manfred",
+    "userName": "Manfred Mustermann", 
+    "password": "asdf",
+    "email": "manfred@mail.de",
+    "isAdministrator": false
+}
+
+// Ändere beim zweiten User den User-Name. Zur Selektion des Users ver- wende die userID.
+###
+PUT http://localhost:8080/publicUser
+Content-Type: application/json 
+
+{
+    "userID": "manfred",
+    "userName": "Manfred Munstermann" 
+}
+
+// Rufe alle User ab. Es sollten 2 User zurückgegeben werden. 
+###
+http://localhost:8080/publicUser
+
+// Lege dritten User an, der gelöscht werden kann.
+###
+POST http://localhost:8080/publicUser
+Content-Type: application/json
+
+{
+    "userID": "sahiram",
+    "userName": "Sahiram Ravikumar", 
+    "password": "web2",
+    "email": "sahiram@mail.de",
+    "isAdministrator": false
+}
+
+// Rufe alle User ab. Es sollten 3 User zurückgegeben werden. 
+###
+http://localhost:8080/publicUser
+
+// Lösche den User mit der ID: "sahiram".
+###
+DELETE http://localhost:8080/publicUser/
+Content-Type: application/json
+
+{
+    "userID": "sahiram"
+}
+
+// Rufe alle User ab. Es sollten 2 User zurückgegeben werden. 
+###
+http://localhost:8080/publicUser

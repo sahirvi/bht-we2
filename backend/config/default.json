@@ -1,0 +1,16 @@
+{
+    "session": {
+        "tokenKey": "djghhhhuuwiwuewieuriwu",
+        "timeout": 300
+    },
+    "db": {
+        "connectionString": "mongodb://localhost/database"
+    },
+    "admin": {
+        "userID": "admin",
+        "userName": "Udo Müller",
+        "password": "123",
+        "email": "udo@mail.de",
+        "isAdministrator": true
+    }
+}
